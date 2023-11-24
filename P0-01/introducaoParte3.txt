@@ -1,0 +1,126 @@
+Herança de Classes em Java:
+
+Fala, pessoal. Hoje vamos falar um pouco sobre herança de classe em Java.
+Primeiramente, vamos a definição: herança em Java é um mecanismo no qual um objeto adquire propriedades e comportamentos de um objeto pai.
+A ideia por trás da herança de classes em Java, é que você pode criar novas classes construídas sobre classes já existentes. Portanto, ao herdar de uma classe existente, você pode reutilizar métodos e atributos da classe pai, não sendo eles privados. Além disso, você também pode adicionar novos métodos e campos em sua classe atual.
+Agora temos que entender alguns conceitos:
+Subclasse/classe filha: subclasse é uma classe que herda a outra classe. Ela também é chamada de classe derivada, ou seja, ela é uma classe estendida de uma classe pai.
+Superclasse /classe pai: superclasse é a classe de onde uma subclasse herda os recursos, e também pode ser chamada de classe base ou classe pai, ou seja, uma classe filha estende a classe pai.
+
+1ºExemplo:
+class Animal {
+    void fazerBarulho() {
+        System.out.println("Algum barulho genérico");
+    }
+}
+
+class Cachorro extends Animal {
+
+    void fazerBarulho() {
+        System.out.println("Latindo...");
+    }
+}
+
+public class ExemploHerancaJava {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.fazerBarulho();
+
+        Cachorro cachorro = new Cachorro();
+        cachorro.fazerBarulho();
+    }
+}
+#include <iostream>
+
+class Animal {
+public:
+    void fazerBarulho() {
+        std::cout << "Algum barulho genérico\n";
+    }
+};
+
+class Cachorro : public Animal {
+public:
+    void fazerBarulho() {
+        std::cout << "Latindo...\n";
+    }
+};
+
+int main() {
+    Animal animal;
+    animal.fazerBarulho();
+
+    Cachorro cachorro;
+    cachorro.fazerBarulho();
+
+    return 0;
+}
+2ºExemplo:
+class Veiculo {
+    String marca;
+
+    Veiculo(String marca) {
+        this.marca = marca;
+    }
+
+    void acelerar() {
+        System.out.println("Veículo acelerando...");
+    }
+}
+
+class Carro extends Veiculo {
+    Carro(String marca) {
+        super(marca); // Chamando o construtor da superclasse
+    }
+
+    void abrirPorta() {
+        System.out.println("Porta do carro aberta.");
+    }
+}
+
+public class ExemploHerancaJava2 {
+    public static void main(String[] args) {
+        Veiculo veiculo = new Veiculo("Toyota");
+        veiculo.acelerar();
+
+        Carro carro = new Carro("Ford");
+        carro.acelerar();
+        carro.abrirPorta();
+    }
+}
+#include <iostream>
+
+class Veiculo {
+public:
+    std::string marca;
+
+    Veiculo(std::string marca) : marca(marca) {}
+
+    void acelerar() {
+        std::cout << "Veículo acelerando...\n";
+    }
+};
+
+class Carro : public Veiculo {
+public:
+    Carro(std::string marca) : Veiculo(marca) {} 
+
+    void abrirPorta() {
+        std::cout << "Porta do carro aberta.\n";
+    }
+};
+
+int main() {
+    Veiculo veiculo("Toyota");
+    veiculo.acelerar();
+
+    Carro carro("Ford");
+    carro.acelerar();
+    carro.abrirPorta();
+
+    return 0;
+}
+
+3ºExemplo: 
+
+

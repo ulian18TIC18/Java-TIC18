@@ -1,0 +1,8 @@
+Variáveis – Contém o valor que pode ser um objeto, e se olharmos 
+o equivalente em Java, estamos falando dos tipos primitivos. 
+Ex.: int i = 0;
+Ponteiros – Variáveis que contém o endereço de outras variáveis, 
+e aqui não tem equivalente em Java. Vamos a este 
+exemplo: int* numero = &i. Traduzindo “numero” é um ponteiro que 
+contém um endereço de um inteiro, e o &i é o endereço do valor 
+do valor de i.

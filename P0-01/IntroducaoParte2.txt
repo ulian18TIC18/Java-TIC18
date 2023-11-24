@@ -1,0 +1,17 @@
+Tipo em Java  ---------  Descrição
+boolean: Pode assumir o valor true ou o valor false
+char: Caractere em notação Unicode de 16 bits. Serve para a armazenagem de dados alfanuméricos. Também pode ser usado como um dado inteiro com valores na faixa entre 0 e 65535.
+byte: Inteiro de 8 bits em notação de complemento de dois. Pode assumir valores entre -128 e 127.
+short: Inteiro de 16 bits em notação de complemento de dois. Os valores possívels cobrem a faixa de --32.768 a 32.767.
+int: Inteiro de 32 bits em notação de complemento de dois. Pode assumir valores entre -2.147.483.648 e 2.147.483.647.
+long: Inteiro de 64 bits em notação de complemento de dois.
+float: Representa números em notação de ponto flutuante normalizada em precisão simples de 32 bits em conformidade com a norma IEEE 754-1985. O menor valor positivo represntável por esse tipo é 1.40239846e-46 e o maior é 3.40282347e+38.
+double: Representa números em notação de ponto flutuante normalizada em precisão dupla de 64 bits em conformidade com a norma IEEE 754-1985. O menor valor positivo representável é 4.94065645841246544e-324 e o maior é 1.7976931348623157e+308
+
+Tipo em CPP  ---------  Descrição
+char: 8 bits -128 a 127
+bool: 8 bits true ou false
+int: 32 bits -2.147.483.647 a 2.147.483.647
+float: 32 bits 7 dígitos significativos
+double: 64 bits 15 dígitos significativos
+
