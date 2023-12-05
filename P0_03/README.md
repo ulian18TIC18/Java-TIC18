@@ -30,4 +30,14 @@ Práticas Comuns:
 7: Exceções Não Verificadas para Situações Irrecuperáveis: Reservar o uso de exceções não verificadas (subclasses de RuntimeException) para situações irrecuperáveis, como erros de programação ou condições imprevisíveis.
 8: Evitar Suprimir Exceções: Evitar o uso excessivo de blocos try-catch para suprimir exceções sem realizar ações significativas no bloco catch.
 9: Utilizar try-with-resources para Recursos: Ao lidar com recursos que implementam AutoCloseable ou Closeable, utilizar o try-with-resources para garantir que os recursos sejam fechados automaticamente.
-           
+
+QUESTÃO 4: Bloco try/catch serve para tratamento de exceções, tratamento de códigos que podem não ser totalmente atendidos e gerarem alguma exceção/erro.
+O try consegue recuperar erros que possam ocorrer no código fornecido em seu bloco.
+O catch por sua vez faz o tratamento dos erros que aconteceram.
+
+QUESTÃO 5: Tratamento de Exceções Personalizadas com Spring Boot em Java
+No desenvolvimento de aplicativos Java usando o framework Spring Boot, o tratamento de exceções é uma parte essencial para garantir uma experiência de usuário suave e lidar adequadamente com erros inesperados. O Spring Boot oferece recursos robustos para capturar e tratar exceções de maneira personalizada, permitindo que os desenvolvedores personalizem o comportamento de manipulação de erros de acordo com as necessidades específicas do aplicativo.
+
+Entendendo as Exceções no Spring Boot
+Antes de mergulharmos na criação de tratamentos de exceções personalizados, é importante entender como o Spring Boot lida com exceções internamente. O Spring Boot emprega um mecanismo de manipulação de exceções centralizado chamado "ExceptionHandler". Esse mecanismo captura exceções lançadas por um controlador (controller) e trata-as de acordo com a lógica definida pelo desenvolvedor.
+O ponto de partida para o tratamento de exceções personalizadas no Spring Boot é a anotação @ControllerAdvice. Essa anotação marca uma classe como um manipulador de exceções global, que será aplicado a todos os controladores no aplicativo. Por meio do @ControllerAdvice, é possível definir métodos para lidar com exceções específicas ou genéricas.
