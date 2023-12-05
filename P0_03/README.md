@@ -12,3 +12,22 @@ QUESTÃO 3: Não consumir a Exception depois de capturar ela;
            Logue a Exception ou de Throw, mas nunca faça as duas coisas;
            Nunca devolva uma exception dentro de um bloco de Finally.
            
+Palavras-Chave:
+1- try: Define um bloco de código no qual exceções podem ocorrer.
+2- catch: Captura e trata exceções específicas. Pode haver vários blocos catch para tratar diferentes tipos de exceções.
+3- finally: Define um bloco de código que é sempre executado, independentemente de ocorrer ou não uma exceção. Geralmente utilizado para liberar recursos.
+4- throw: Utilizado para explicitamente lançar uma exceção.
+5- throws: Indica que um método pode lançar exceções específicas. Deve ser declarado na assinatura do método.
+6- try-with-resources (Java 7+): Utilizado para simplificar o tratamento de recursos que implementam a interface AutoCloseable ou Closeable.
+
+Práticas Comuns:
+1: Identificar Exceções Adequadas: Escolher as exceções apropriadas para capturar e tratar, considerando o tipo específico de problema que pode ocorrer.
+2: Não Capturar Exceções Demais: Evitar capturar exceções genéricas demais, como Exception ou Throwable, a menos que seja estritamente necessário.
+3: Log de Exceções: Registrar informações sobre exceções, incluindo mensagens de erro e pilhas de chamadas, para facilitar a depuração.
+4: Tratamento de Exceções Significativo: O tratamento de exceções deve ser significativo e proporcional ao contexto do aplicativo. Em alguns casos, pode ser apropriado relançar a exceção se não puder ser tratada adequadamente naquele ponto.
+5: Bloco finally para Liberação de Recursos: Utilizar blocos finally para garantir que os recursos sejam liberados corretamente, mesmo em caso de exceção.
+6: Encadeamento de Exceções (Java 7+): O Java permite encadear exceções usando o construtor de exceções que aceita uma exceção anterior como causa (Throwable).
+7: Exceções Não Verificadas para Situações Irrecuperáveis: Reservar o uso de exceções não verificadas (subclasses de RuntimeException) para situações irrecuperáveis, como erros de programação ou condições imprevisíveis.
+8: Evitar Suprimir Exceções: Evitar o uso excessivo de blocos try-catch para suprimir exceções sem realizar ações significativas no bloco catch.
+9: Utilizar try-with-resources para Recursos: Ao lidar com recursos que implementam AutoCloseable ou Closeable, utilizar o try-with-resources para garantir que os recursos sejam fechados automaticamente.
+           
