@@ -1,0 +1,100 @@
+@startuml
+
+class Tribunal {
+    - processos: List<Processo>
+    + criarProcesso(): Processo
+    + distribuirProcesso(processo: Processo): void
+}
+
+class Processo {
+    - partes: List<Parte>
+    - advogados: List<Advogado>
+    - juizes: List<Juiz>
+    - setorAtual: Setor
+    + adicionarParte(parte: Parte): void
+    + adicionarAdvogado(advogado: Advogado): void
+    + sortearJuizes(): void
+    + moverParaSetor(setor: Setor): void
+    + pedirVista(juiz: Juiz): void
+    + julgar(): void
+    + seguirParaExecucao(): void
+    + seguirParaArquivamento(): void
+    + gerarRecurso(): Processo
+}
+
+class Parte {
+    - nome: String
+    - tipo: TipoParte
+    + indicarAdvogado(advogado: Advogado): void
+}
+
+enum TipoParte {
+    FISICA
+    JURIDICA
+    ESTADO
+}
+
+class Advogado {
+    - nome: String
+}
+
+class Juiz {
+    - nome: String
+    - tipo: TipoJuiz
+}
+
+enum TipoJuiz {
+    RELATOR
+    REVISOR
+    PROLATOR
+}
+
+class Setor {
+    - nome: String
+}
+
+class Secretaria extends Setor {
+    + criarProcesso(): Processo
+}
+
+class Distribuicao extends Setor {
+    + sortearJuizes(processo: Processo): void
+}
+
+class Gabinete extends Setor {
+    + revisarProcesso(processo: Processo): void
+}
+
+class Plenario extends Setor {
+    + julgarProcesso(processo: Processo): void
+}
+
+class Execucao extends Setor {
+    + executarSentenca(processo: Processo): void
+}
+
+class Arquivamento extends Setor {
+    + arquivarProcesso(processo: Processo): void
+}
+
+class App {
+    - tribunal: Tribunal
+    + menuPrincipal(): void
+}
+
+Tribunal "1" --> "0..*" Processo
+Processo "1" --> "1..*" Parte
+Processo "1" --> "0..*" Advogado
+Processo "1" --> "3" Juiz
+Processo "1" --> "1" Setor
+Parte "1" --> "0..*" Advogado
+Juiz "3" --> "1" Processo
+Setor <|-- Secretaria
+Setor <|-- Distribuicao
+Setor <|-- Gabinete
+Setor <|-- Plenario
+Setor <|-- Execucao
+Setor <|-- Arquivamento
+Processo --|> Processo: Recurso
+
+@enduml
